@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.nav-container {
+  display: flex;
+  gap: 56px;
+  color: white;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  width: 100%;
+  padding: 0px 135px;
+}
+
+/* ?Main */
+
+main {
+  display: flex;
+  justify-content: center;
+  background-color: #00040f;
+  color: white;
+  width: 100%;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  width: 100%;
+  background-color: #00040f;
+  padding: 100px 135px 0px;
+}
+
+.section-container {
+  height: 200vh;
+}
+
+section {
+  scroll-margin-top: 100px;
+}
+
+/* responsives */
+
+/* ეს კოდი ვრცელდება 880 პიქსელზე , ეს არის ლიმიტი , და მის ყველა დანარჩენზე 0-მდე */
+
+/* ფრჩხილებში რა ზომასაც დავწერ , მარტო იმ ზომაზე იმოქმედებს ცემს მიეერ დაწერილი კოდი */
+@media (max-width: 880px) {
+  nav {
+    display: none;
+  }
+}
+
+/* ტუ ეკრანი არის 1440 პიქსელი ან უფრო პატარა მაშინ padding*/
+
+@media (max-width: 1400px) {
+  .header-container {
+    padding: 100px 10% 0px;
+  }
+  .main-container {
+    padding: 0;
+  }
+}
