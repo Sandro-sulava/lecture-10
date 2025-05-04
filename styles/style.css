@@ -1,7 +1,77 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
 * {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+    10. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
 }
 
 li {
@@ -12,6 +82,8 @@ a {
   text-decoration: none;
   color: white;
 }
+
+/* Code */
 
 html {
   scroll-behavior: smooth;
@@ -24,18 +96,12 @@ body {
 header {
   display: flex;
   justify-content: center;
-  align-items: center;
+  background-color: #647298;
   width: 100%;
   height: 90px;
   position: fixed;
   top: 0;
   left: 0;
-}
-
-.nav-container {
-  display: flex;
-  gap: 56px;
-  color: white;
 }
 
 .header-container {
@@ -47,13 +113,18 @@ header {
   padding: 0px 135px;
 }
 
-/* ?Main */
+.nav-container {
+  display: flex;
+  gap: 56px;
+}
+
+/* Main */
 
 main {
   display: flex;
   justify-content: center;
   background-color: #00040f;
-  color: white;
+  color: #ffffff;
   width: 100%;
 }
 
@@ -62,8 +133,8 @@ main {
   flex-direction: column;
   max-width: 1440px;
   width: 100%;
-  background-color: #00040f;
-  padding: 100px 135px 0px;
+  padding: 0px 135px;
+  margin-top: 100px;
 }
 
 .section-container {
@@ -74,24 +145,27 @@ section {
   scroll-margin-top: 100px;
 }
 
-/* responsives */
+/* Responsive */
 
-/* ეს კოდი ვრცელდება 880 პიქსელზე , ეს არის ლიმიტი , და მის ყველა დანარჩენზე 0-მდე */
+/* ეს კოდი ვრცელდება 880 პიქსელზე, ეს არის ლიმიტი, და მის დაბლა ყველა დანარჩენზე 0-მდე */
 
-/* ფრჩხილებში რა ზომასაც დავწერ , მარტო იმ ზომაზე იმოქმედებს ცემს მიეერ დაწერილი კოდი */
+/* ფრჩხილებში რა ზომასაც დავწერ, მარტო იმ ზომაზე იმოქმდებს ჩემს მიერ დაწერილი კოდი */
 @media (max-width: 880px) {
   nav {
     display: none;
   }
 }
 
-/* ტუ ეკრანი არის 1440 პიქსელი ან უფრო პატარა მაშინ padding*/
+/* თუ ეკრანი არის 1440 პიქსელი ან უფრო პატარა მაშინ padding-შეიცვალოს */
 
-@media (max-width: 1400px) {
+@media (max-width: 1440px) {
   .header-container {
-    padding: 100px 10% 0px;
+    padding: 0 10%;
   }
+
   .main-container {
-    padding: 0;
+    padding: 0 10%;
   }
 }
+
+/* max-width:800px = width=1000px */
